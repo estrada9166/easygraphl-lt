@@ -1,0 +1,124 @@
+{
+  "aggregate": {
+    "timestamp": "2019-02-20T23:36:59.081Z",
+    "scenariosCreated": 4,
+    "scenariosCompleted": 4,
+    "requestsCompleted": 40,
+    "latency": {
+      "min": 1.4,
+      "max": 72.3,
+      "median": 2.9,
+      "p95": 56.2,
+      "p99": 72.3
+    },
+    "rps": {
+      "count": 40,
+      "mean": 20.3
+    },
+    "scenarioDuration": {
+      "min": 109.9,
+      "max": 256.4,
+      "median": 120.5,
+      "p95": 256.4,
+      "p99": 256.4
+    },
+    "scenarioCounts": {
+      "GraphQL Query load test": 4
+    },
+    "errors": {},
+    "codes": {
+      "200": 40
+    },
+    "matches": 0,
+    "customStats": {},
+    "counters": {},
+    "scenariosAvoided": 0,
+    "phases": [
+      {
+        "duration": 2,
+        "arrivalRate": 2
+      }
+    ]
+  },
+  "intermediate": [
+    {
+      "timestamp": "2019-02-20T23:36:59.078Z",
+      "scenariosCreated": 4,
+      "scenariosCompleted": 4,
+      "requestsCompleted": 40,
+      "latency": {
+        "min": 1.4,
+        "max": 72.3,
+        "median": 2.9,
+        "p95": 56.2,
+        "p99": 72.3
+      },
+      "rps": {
+        "count": 40,
+        "mean": 20.41
+      },
+      "scenarioDuration": {
+        "min": 109.9,
+        "max": 256.4,
+        "median": 120.5,
+        "p95": 256.4,
+        "p99": 256.4
+      },
+      "scenarioCounts": {
+        "GraphQL Query load test": 4
+      },
+      "errors": {},
+      "codes": {
+        "200": 40
+      },
+      "matches": 0,
+      "latencies": [
+        19227957,
+        2966907,
+        2267615,
+        19470324,
+        72303978,
+        2147530,
+        1893656,
+        2480802,
+        9367951,
+        60444723,
+        3212497,
+        2218515,
+        2048234,
+        7185590,
+        41306131,
+        1830730,
+        2170813,
+        1980795,
+        7725759,
+        26539435,
+        2048324,
+        1392138,
+        1577278,
+        6231984,
+        23120048,
+        2551952,
+        4032440,
+        1693682,
+        9061739,
+        51969595,
+        2928036,
+        1756644,
+        1718351,
+        6570611,
+        30666603,
+        2204362,
+        1905952,
+        2002783,
+        10837071,
+        30444713
+      ],
+      "customStats": {},
+      "counters": {},
+      "concurrency": 0,
+      "pendingRequests": 0,
+      "scenariosAvoided": 0
+    }
+  ]
+}
