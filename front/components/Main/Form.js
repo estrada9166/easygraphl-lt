@@ -10,6 +10,9 @@ const FormStyle = styled.div`
   width: 50%;
   text-align: center;
   margin: auto;
+  @media all and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const InputContainer = styled.div`
@@ -25,6 +28,9 @@ const InputStyle = styled.input`
   background-color: #FFFCFC;
   outline: none;
   border-bottom: 1px dotted #00083266;
+  @media all and (max-width: 600px) {
+    width: 80%;
+  }
 `
 
 const TextStyle = styled.textarea`
@@ -34,6 +40,9 @@ const TextStyle = styled.textarea`
   background-color: #FFFCFC;
   outline: none;
   border: 1px dotted #00083266;
+  @media all and (max-width: 600px) {
+    width: 80%;
+  }
 `
 
 const ErrorTitleStyle = styled.span`
@@ -161,12 +170,12 @@ class Form extends Component {
             />
           </InputContainer>
           <InputContainer>
-            <ButtonStyle onClick={this.start} disabled={this.state.buttonDisabled}>Send</ButtonStyle>
+            <ButtonStyle id='sendButton' onClick={this.start} disabled={this.state.buttonDisabled}>Send</ButtonStyle>
           </InputContainer>
         </form>
         {
           this.state.error ? 
-            <ErrorTitleStyle>{this.state.error}</ErrorTitleStyle>
+            <ErrorTitleStyle id='errorMessage'>{this.state.error}</ErrorTitleStyle>
           : <div />
         }
       </FormStyle>

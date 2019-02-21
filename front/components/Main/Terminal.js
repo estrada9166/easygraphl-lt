@@ -7,6 +7,9 @@ import { ButtonStyle } from '../styles/ButtonStyle'
 
 const TerminalStyle = styled.div`
   width: 50%;
+  @media all and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const ButtonContainer = styled.div`
