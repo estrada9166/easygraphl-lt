@@ -24,15 +24,15 @@ class Terminal extends Component {
 
   componentDidMount() {
     this.props.socket.on('load-test', (msg) => {
+      if (this.notifications.length > 500) {
+        this.notifications = this.notifications.slice(1, 250)
+      }
+
       this.notifications.push(msg)
       this.setState({
         notifications: this.notifications
       })
     })
-  }
-
-  componentWillUnmount() {
-    
   }
 
   clearTerminal = () => {
