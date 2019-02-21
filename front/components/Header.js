@@ -10,7 +10,7 @@ const HeaderStyle = styled.div`
 
 const Header = () => (
   <HeaderStyle>
-    <img src="/static/logo.png" alt="easygraphql logo" />
+    <img src='/static/logo.png' alt='easygraphql logo' />
   </HeaderStyle>
 )
 

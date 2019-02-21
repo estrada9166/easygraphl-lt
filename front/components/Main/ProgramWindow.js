@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Window = styled.div`
@@ -32,30 +32,29 @@ const Content = styled.div`
 `
 
 class ProgramWindow extends Component {
-
-  componentDidMount() {
-    this.scrollToBottom();
+  componentDidMount () {
+    this.scrollToBottom()
   }
 
-  componentDidUpdate() {
-    this.scrollToBottom();
+  componentDidUpdate () {
+    this.scrollToBottom()
   }
 
-  scrollToBottom() {
-    this.el.scrollIntoView();
+  scrollToBottom () {
+    this.el.scrollIntoView()
   }
 
-  render() {
+  render () {
     return (
       <Window>
         <Bar>{this.props.title || ''}</Bar>
         <Content>
           {this.props.children}
-          <div ref={el => { this.el = el; }} />
+          <div ref={el => { this.el = el }} />
         </Content>
       </Window>
     )
-  } 
+  }
 }
 
 export default ProgramWindow

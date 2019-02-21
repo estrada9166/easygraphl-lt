@@ -8,7 +8,7 @@ const Inner = styled.div`
   @media all and (max-width: 600px) {
     margin: 0;
   }
-`;
+`
 
 const Page = (props) => (
   <div>
