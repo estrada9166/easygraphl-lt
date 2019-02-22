@@ -19,19 +19,45 @@ const ButtonContainer = styled.div`
 class Terminal extends Component {
   notifications = []
   state = {
-    notifications: []
+    notifications: [],
+    running: false
   }
 
   componentDidMount() {
     this.props.socket.on('load-test', (msg) => {
-      if (this.notifications.length > 500) {
-        this.notifications = this.notifications.slice(1, 250)
+      if (!this.state.running) {
+        this.setState({ running: true })
       }
-
+  
       this.notifications.push(msg)
+      if (this.notifications.length > 500) {
+        this.notifications = this.notifications.slice(250)
+      }
+    })
+
+    this.props.socket.on('finish', (msg) => {
       this.setState({
-        notifications: this.notifications
+        notifications: this.notifications,
+        running: false
       })
+      this.notifications = []
+    })
+    
+    this.timer = setInterval(() => {
+      if (this.state.running) {
+        this.setState({
+          notifications: this.notifications
+        })
+      }
+    }, 1000);
+    
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    this.notifications = []
+    this.setState({
+      notifications: []
     })
   }
 
