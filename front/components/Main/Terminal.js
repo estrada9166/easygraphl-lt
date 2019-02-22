@@ -27,11 +27,16 @@ class Terminal extends Component {
     this.props.socket.on('load-test', (msg) => {
       if (!this.state.running) {
         this.setState({ running: true })
+        this.timer = setInterval(() => {
+          this.setState({
+            notifications: this.notifications
+          })
+        }, 2000);
       }
   
       this.notifications.push(msg)
-      if (this.notifications.length > 500) {
-        this.notifications = this.notifications.slice(250)
+      if (this.notifications.length > 200) {
+        this.notifications = this.notifications.slice(100)
       }
     })
 
@@ -41,24 +46,14 @@ class Terminal extends Component {
         running: false
       })
       this.notifications = []
+      clearInterval(this.timer);
     })
-    
-    this.timer = setInterval(() => {
-      if (this.state.running) {
-        this.setState({
-          notifications: this.notifications
-        })
-      }
-    }, 1000);
-    
+
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
     this.notifications = []
-    this.setState({
-      notifications: []
-    })
   }
 
   clearTerminal = () => {
